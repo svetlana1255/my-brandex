@@ -165,7 +165,368 @@ body {
         font-size: 1.05rem;
         color: #3e2c1b;
         border-bottom: 1px solid #e4d9cd;
-        letter-spacing: 0.3px;
+        letter-spacing: font-size: 0.8rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 30px;
+        letter-spacing: 0.5px;
+        backdrop-filter: blur(4px);
+    }
+
+    .ba-images figure:last-child figcaption {
+        background: #3e2c1b;
+        left: auto;
+        right: 10px;
+    }
+
+    .ba-note {
+        font-size: 0.9rem;
+        color: #6b5a49;
+        padding: 14px 20px 18px;
+        background: white;
+    }
+
+    /* Форма обратной связи */
+    .form-wrapper {
+        background: white;
+        border-radius: 28px;
+        padding: 48px 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+        border: 1px solid #f0e8df;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .form-wrapper p {
+        color: #6b5a49;
+        margin-bottom: 32px;
+        font-size: 1.1rem;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-group label {
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: #3e2c1b;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 14px 18px;
+        border: 1px solid #e2d6c8;
+        border-radius: 14px;
+        font-family: inherit;
+        font-size: 1rem;
+        background: #fefcf9;
+        transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #c9a77b;
+        box-shadow: 0 0 0 4px rgba(201, 167, 123, 0.15);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .form-footer {
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .btn {
+        background: #3e2c1b;
+        color: white;
+        border: none;
+        padding: 16px 42px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.1s;
+        box-shadow: 0 8px 18px rgba(62, 44, 27, 0.25);
+        border: 1px solid #5a412c;
+    }
+
+    .btn:hover {
+        background: #5a412c;
+    }
+
+    .btn:active {
+        transform: scale(0.97);
+    }
+
+    .form-note {
+        font-size: 0.85rem;
+        color: #8b7a68;
+        max-width: 300px;
+    }
+
+    /* Подвал (минимальный) */
+    footer {
+        background: #2b1f14;
+        color: #bfae9b;
+        text-align: center;
+        padding: 28px 20px;
+        font-size: 0.9rem;
+        margin-top: 30px;
+    }
+
+    footer a {
+        color: #d8c6b2;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* Адаптив */
+    @media (max-width: 750px) {
+        .header-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .contacts {
+            gap: 18px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        .form-wrapper {
+            padding: 32px 22px;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .form-footer {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+
+        .btn {
+            width: 100%;
+            text-align: center;
+            padding: 16px 20px;
+        }
+
+        .ba-images img {
+            height: 140px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contacts {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .ba-images {
+            grid-template-columns: 1fr;
+        }
+
+        .ba-images img {
+            height: 180px;
+        }
+
+        .ba-images figure:last-child figcaption {
+left: 10px;
+            right: auto;
+        }
+    }
+</style>
+<!-- Шапка с контактами -->
+<header>
+    <div class="container header-inner">
+        <div class="logo">Кож<span>Ремонт</span></div>
+        <div class="contacts">
+            <a href="tel:+79123456789">
+                <span class="icon">📞</span> +7 (912) 345-67-89
+            </a>
+            <a href="mailto:info@kozhremont.ru">
+                <span class="icon">✉️</span> info@kozhremont.ru
+            </a>
+            <a href="#" target="_blank">
+                <span class="icon">📍</span> ул. Кожевенная, 12
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Блок услуг -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Что мы ремонтируем</h2>
+            <div class="title-divider"></div>
+            <p class="section-subtitle">Вернём любимым вещам первоначальный вид — аккуратно, надёжно и с гарантией.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">👜</span>
+                    <h3>Сумки</h3>
+                    <p>Замена фурнитуры, реставрация ручек, устранение потёртостей и разрывов.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🧥</span>
+                    <h3>Куртки</h3>
+                    <p>Ремонт молний, подкладки, восстановление кожи и трещин.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">👞</span>
+                    <h3>Обувь</h3>
+                    <p>Замена набоек, каблуков, ремонт швов и подошвы.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🛋️</span>
+                    <h3>Мебель</h3>
+                    <p>Реставрация кожаных диванов, кресел, перетяжка и покраска.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🧤</span>
+                    <h3>Аксессуары</h3>
+                    <p>Ремонт ремней, перчаток, портмоне и других кожаных изделий.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с фото до и после -->
+    <section style="background: #f3efe9; padding: 70px 0;">
+        <div class="container">
+            <h2 class="section-title">До и после</h2>
+            <div class="title-divider"></div>
+            <p class="section-subtitle">Реальные примеры работ нашей мастерской — оцените результат.</p>
+
+            <div class="before-after-grid">
+                <!-- Пример 1: Сумка -->
+                <div class="ba-item">
+                    <div class="ba-label">👜 Сумка — реставрация кожи</div>
+                    <div class="ba-images">
+                        <figure>
+                            <img src="https://placehold.co/600x400/f0e8df/3e2c1b?text=До" alt="Сумка до ремонта">
+                            <figcaption>До</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://placehold.co/600x400/e2d6c8/3e2c1b?text=После" alt="Сумка после ремонта">
+                            <figcaption>После</figcaption>
+                        </figure>
+                    </div>
+                    <div class="ba-note">Устранены глубокие царапины, восстановлен цвет и блеск кожи.</div>
+                </div>
+
+                <!-- Пример 2: Куртка -->
+                <div class="ba-item">
+                    <div class="ba-label">🧥 Куртка — замена молнии</div>
+                    <div class="ba-images">
+                        <figure>
+                            <img src="https://placehold.co/600x400/f0e8df/3e2c1b?text=До" alt="Куртка до ремонта">
+                            <figcaption>До</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://placehold.co/600x400/e2d6c8/3e2c1b?text=После" alt="Куртка после ремонта">
+<figcaption>После</figcaption>
+                        </figure>
+                    </div>
+                    <div class="ba-note">Установлена новая молния, отреставрированы края и подкладка.</div>
+                </div>
+
+                <!-- Пример 3: Обувь -->
+                <div class="ba-item">
+                    <div class="ba-label">👞 Обувь — восстановление подошвы</div>
+                    <div class="ba-images">
+                        <figure>
+                            <img src="https://placehold.co/600x400/f0e8df/3e2c1b?text=До" alt="Обувь до ремонта">
+                            <figcaption>До</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://placehold.co/600x400/e2d6c8/3e2c1b?text=После" alt="Обувь после ремонта">
+                            <figcaption>После</figcaption>
+                        </figure>
+                    </div>
+                    <div class="ba-note">Заменены набойки, отремонтированы швы, кожа обработана кремом.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section>
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="section-title" style="font-size: 1.9rem;">Оставьте заявку</h2>
+                <div class="title-divider"></div>
+                <p>Перезвоним в течение 15 минут, уточним детали и назовём точную стоимость.</p>
+
+                <form action="#" method="post">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" name="name" placeholder="Иван" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Что нужно отремонтировать?</label>
+                            <textarea id="message" name="message" placeholder="Например: женская сумка, потёртости по углам, нужна реставрация..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" class="btn">Отправить заявку</button>
+                        <span class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Мастерская «КожРемонт» — ремонт кожаных изделий с душой.</p>
+        <p style="margin-top: 8px; font-size: 0.85rem;">📍 ул. Кожевенная, 12 &nbsp;|&nbsp; <a href="tel:+79123456789">+7 (912) 345-67-89</a></p>
+    </div>
+</footer>
+
         display: flex;
         align-items: center;
         gap: 8px;
